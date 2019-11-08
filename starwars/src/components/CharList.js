@@ -10,20 +10,22 @@ export default function CharList() {
         axios
           .get(`https://lambda-swapi.herokuapp.com/api/people/`)
           .then(res => {
-            setLists(res);
+            
             console.log('Join the Dark Side', res)
+            setLists(res.data.results);
           })
           .catch( error => {
             console.log('these are not the droids you are looking for', error)
           })
       }, [])
+    
       
       return (
           <div className='info'> 
-              {lists.map(list => {
+              {lists.map((list, index) => {
                   return (
                     <CharCard 
-                        key={list.id}
+                        key={index}
                         name={list.name}
                         height={list.height}
                         mass={list.mass}
