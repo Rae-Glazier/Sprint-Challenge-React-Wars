@@ -1,8 +1,17 @@
 import React, { useState, useEffect} from 'react';
 import './App.css';
+import styled from 'styled-components';
 import CharList from './components/CharList';
-import axios from 'axios';
 
+const MainCont = styled.div`
+  width: 100%
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
 export default function App () {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -11,25 +20,11 @@ export default function App () {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  // const [lists, setLists] = useState([]);
-
-  // useEffect(() => {
-  //     axios
-  //       .get(`https://lambda-swapi.herokuapp.com/api/people/`)
-  //       .then(res => {
-  //         setLists(res.data);
-  //         console.log('Join the Dark Side', res)
-  //       })
-  //       .catch( error => {
-  //         console.log('these are not the droids you are looking for', error)
-  //       })
-  //   }, [])
-
   return (
-    <div className="App">
+    <MainCont>
       <h1 className="Header">React Wars</h1>
       <CharList />
-    </div>
+    </MainCont>
   );
 }
 
