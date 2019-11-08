@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
+import styled from 'styled-components';
+import CharList from './components/CharList';
 
-const App = () => {
+const MainCont = styled.div`
+  width: 100%
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
+export default function App () {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -10,10 +21,11 @@ const App = () => {
   // sync up with, if any.
 
   return (
-    <div className="App">
+    <MainCont>
       <h1 className="Header">React Wars</h1>
-    </div>
+      <CharList />
+    </MainCont>
   );
 }
 
-export default App;
+
